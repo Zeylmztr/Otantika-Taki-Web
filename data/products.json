@@ -1,0 +1,61 @@
+[
+  {
+    "id": "dogal-tas-bileklik",
+    "name": "Doğal Taş Bileklik",
+    "price": 599.0,
+    "oldPrice": null,
+    "category": "bileklikler",
+    "image": "img/product/f7c385ee45764322abb45265bd2b4acb.png",
+    "badge": "new",
+    "description": "Doğal taşlarla hazırlanmış el yapımı bileklik.",
+    "active": true,
+    "colors": [
+      "purple"
+    ],
+    "createdAt": "2026-06-09T23:32:51",
+    "images": [
+      "img/product/f7c385ee45764322abb45265bd2b4acb.png",
+      "img/product/2cf15b8dd8f1403ba2ccc6208f10ec31.png"
+    ],
+    "variants": [
+      {
+        "color": "purple",
+        "image": "img/product/f7c385ee45764322abb45265bd2b4acb.png"
+      }
+    ]
+  },
+  {
+    "id": "efe-oyasi-kupe",
+    "name": "Efe Oyası Küpe",
+    "price": 250.0,
+    "oldPrice": null,
+    "category": "kupeler",
+    "image": "img/product/9c206d17653c434fbc5794894cfb7f0b.png",
+    "badge": "new",
+    "description": "Eski sandık oyalarından kişiye özel üretimdir.",
+    "active": true,
+    "colors": [
+      "purple",
+      "white",
+      "multicolor"
+    ],
+    "createdAt": "2026-06-15T23:32:51",
+    "images": [
+      "img/product/9c206d17653c434fbc5794894cfb7f0b.png"
+    ],
+    "variants": [
+      {
+        "color": "purple",
+        "image": "img/product/9c206d17653c434fbc5794894cfb7f0b.png"
+      },
+      {
+        "color": "white",
+        "image": "img/product/9c206d17653c434fbc5794894cfb7f0b.png"
+      },
+      {
+        "color": "multicolor",
+        "image": "img/product/9c206d17653c434fbc5794894cfb7f0b.png"
+      }
+    ]
+  }
+]

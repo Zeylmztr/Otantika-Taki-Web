@@ -1,0 +1,46 @@
+[
+  {
+    "id": "igne-oyasi-5-kural",
+    "title": "İğne Oyası Takı Yapımında 5 Altın Kural",
+    "excerpt": "El emeği takı üretiminde kaliteyi artıran temel ipuçları.",
+    "content": "<p>İğne oyası, sabır ve özen isteyen bir el sanatıdır. Doğru ip seçimi, düzgün düğüm teknikleri ve doğal taşlarla uyum, ürününüzün ömrünü uzatır.</p><p>Otantika Takı olarak her parçayı tek tek el emeğiyle üretiyoruz. Koleksiyonumuzda geleneksel motifleri modern formlarla buluşturuyoruz.</p>",
+    "image": "img/blog/blog-1.jpg",
+    "author": "Otantika Takı",
+    "date": "2024-09-17",
+    "published": true,
+    "large": true
+  },
+  {
+    "id": "dogal-tas-kolye-rehberi",
+    "title": "Doğal Taşlarla Kolye Tasarlama Rehberi",
+    "excerpt": "Doğal taş seçimi ve kolye tasarımında dikkat edilecekler.",
+    "content": "<p>Doğal taşlar her biri farklı enerji ve renk tonu taşır. Kolye tasarlarken taş boyutu, delik yapısı ve iplik kalınlığı birbiriyle uyumlu olmalıdır.</p>",
+    "image": "img/blog/blog-7.jpg",
+    "author": "Otantika Takı",
+    "date": "2024-09-17",
+    "published": true,
+    "large": false
+  },
+  {
+    "id": "geleneksel-motifler",
+    "title": "Geleneksel Motiflerin Modern Takıdaki Yeri",
+    "excerpt": "Geçmişten gelen motifler günümüz tasarımlarında nasıl yaşatılır?",
+    "content": "<p>Anadolu motifleri, modern minimal çizgilerle birleştiğinde zamansız parçalar ortaya çıkar.</p>",
+    "image": "img/blog/blog-9.jpg",
+    "author": "Otantika Takı",
+    "date": "2024-09-17",
+    "published": true,
+    "large": false
+  },
+  {
+    "id": "kupe-kombin-onerileri",
+    "title": "El Yapımı Küpe Modelleri ve Kombin Önerileri",
+    "excerpt": "Küpelerinizi günlük ve özel kombinlerle nasıl kullanabilirsiniz?",
+    "content": "<p>Sallantılı küpeler günlük kullanımda hafiflik sunarken, taşlı modeller özel günler için idealdir.</p>",
+    "image": "img/blog/blog-2.jpg",
+    "author": "Otantika Takı",
+    "date": "2024-09-17",
+    "published": true,
+    "large": false
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "kolyeler",
+    "name": "Kolyeler",
+    "image": "img/categories/kolyeler.png",
+    "order": 1,
+    "active": true,
+    "featured": true
+  },
+  {
+    "id": "bileklikler",
+    "name": "Bileklikler",
+    "image": "img/categories/bileklikler.png",
+    "order": 2,
+    "active": true,
+    "featured": true
+  },
+  {
+    "id": "kupeler",
+    "name": "Küpeler",
+    "image": "img/categories/kupeler.png",
+    "order": 3,
+    "active": true,
+    "featured": true
+  },
+  {
+    "id": "gozluk-ipleri",
+    "name": "Gözlük İpleri",
+    "image": "img/categories/aksesuarlar.png",
+    "order": 4,
+    "active": true,
+    "featured": false
+  },
+  {
+    "id": "aksesuarlar",
+    "name": "Aksesuarlar",
+    "image": "img/categories/aksesuarlar.png",
+    "order": 5,
+    "active": true,
+    "featured": true
+  }
+]

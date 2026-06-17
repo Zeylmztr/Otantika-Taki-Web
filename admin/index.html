@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otantika Takı — Yönetim Paneli</title>
+    <link rel="icon" href="../img/otantikalogo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div id="login-screen" class="login-screen">
+        <form id="login-form" class="login-card">
+            <img src="../img/otantikalogo.png?v=2" alt="Otantika Takı" class="login-logo">
+            <h1>Yönetim Paneli</h1>
+            <p>Ürün ve blog içeriklerinizi buradan yönetin.</p>
+            <input type="password" id="login-password" placeholder="Admin şifresi" required>
+            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            <p id="login-error" class="error-text"></p>
+        </form>
+    </div>
+
+    <div id="admin-app" class="admin-app hidden">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../img/otantikalogo.png?v=2" alt="Otantika Takı" class="sidebar-logo">
+                <span>Otantika Admin</span>
+            </div>
+            <nav>
+                <button type="button" class="nav-btn active" data-tab="products">Ürünler</button>
+                <button type="button" class="nav-btn" data-tab="categories">Kategoriler</button>
+                <button type="button" class="nav-btn" data-tab="posts">Blog Yazıları</button>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../index.html" target="_blank" class="link-btn">Siteyi Görüntüle</a>
+                <button type="button" id="logout-btn" class="link-btn danger">Çıkış</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="main-header">
+                <h2 id="panel-title">Ürünler</h2>
+                <button type="button" id="add-new-btn" class="btn btn-primary">+ Yeni Ekle</button>
+            </header>
+
+            <section id="products-panel" class="panel">
+                <p class="panel-hint">Yeni Koleksiyon en fazla 8 ürün gösterir. En son eklenen en üstte yer alır; 9. ürün eklendiğinde en eski otomatik silinir.</p>
+                <div id="products-list" class="item-list"></div>
+            </section>
+
+            <section id="categories-panel" class="panel hidden">
+                <p class="panel-hint">Mağaza ve ana sayfadaki kategori listeleri buradan yönetilir. Ana sayfada göstermek için "Ana sayfada göster" seçeneğini işaretleyin.</p>
+                <div id="categories-list" class="item-list"></div>
+            </section>
+
+            <section id="posts-panel" class="panel hidden">
+                <div id="posts-list" class="item-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title">Yeni Ürün</h3>
+                <button type="button" class="icon-btn" data-close="true">&times;</button>
+            </div>
+            <form id="entity-form" class="modal-body" novalidate>
+                <input type="hidden" id="entity-id">
+                <input type="hidden" id="entity-mode" value="product">
+
+                <div class="form-grid product-fields">
+                    <label>Ürün Adı<input type="text" id="product-name" required></label>
+                    <label>Fiyat (₺)<input type="number" id="product-price" min="0" step="1" required></label>
+                    <label>Eski Fiyat (₺)<input type="number" id="product-old-price" min="0" step="1"></label>
+                    <label>Kategori
+                        <select id="product-category"></select>
+                    </label>
+                    <label>Etiket
+                        <select id="product-badge">
+                            <option value="">Yok</option>
+                            <option value="new">Yeni</option>
+                            <option value="sale">İndirim</option>
+                            <option value="stockout">Tükendi</option>
+                        </select>
+                    </label>
+                    <label class="checkbox-label"><input type="checkbox" id="product-active" checked> Yayında</label>
+                    <div class="full color-field">
+                        <span class="field-label">Ürün Rengi <small>(zorunlu — mağaza filtresi, en fazla 5)</small></span>
+                        <div id="product-colors" class="admin-color-picker"></div>
+                    </div>
+                    <div class="full variant-field">
+                        <span class="field-label">Renk Varyantları <small>(isteğe bağlı — aynı ürünün farklı renklerde farklı görselleri varsa)</small></span>
+                        <div id="product-variants-list" class="admin-variants-list"></div>
+                        <button type="button" id="add-variant-btn" class="btn btn-secondary btn-sm">+ Varyant Ekle</button>
+                    </div>
+                    <label class="full">Açıklama<textarea id="product-description" rows="3"></textarea></label>
+                    <div class="full product-images-field">
+                        <span class="field-label">Görseller <small>(birden fazla seçebilirsiniz)</small></span>
+                        <input type="file" id="product-images-file" accept="image/*" multiple>
+                        <div id="product-images-list" class="admin-images-list"></div>
+                    </div>
+                </div>
+
+                <div class="form-grid category-fields hidden">
+                    <label class="full">Kategori Adı<input type="text" id="category-name"></label>
+                    <label>Sıra<input type="number" id="category-order" min="1" step="1" value="1"></label>
+                    <label class="checkbox-label"><input type="checkbox" id="category-active" checked> Yayında</label>
+                    <label class="checkbox-label"><input type="checkbox" id="category-featured"> Ana sayfada göster</label>
+                    <label class="full">Kapak Görseli
+                        <input type="file" id="category-image-file" accept="image/*">
+                        <input type="hidden" id="category-image">
+                        <img id="category-image-preview" class="preview hidden" alt="">
+                    </label>
+                </div>
+
+                <div class="form-grid post-fields hidden">
+                    <label class="full">Başlık<input type="text" id="post-title-input"></label>
+                    <label class="full">Özet<textarea id="post-excerpt" rows="2"></textarea></label>
+                    <label class="full">İçerik (HTML)<textarea id="post-content" rows="6"></textarea></label>
+                    <label>Yazar<input type="text" id="post-author" value="Otantika Takı"></label>
+                    <label>Tarih<input type="date" id="post-date"></label>
+                    <label class="checkbox-label"><input type="checkbox" id="post-published" checked> Yayında</label>
+                    <label class="checkbox-label"><input type="checkbox" id="post-large"> Büyük kapak</label>
+                    <label class="full">Kapak Görseli
+                        <input type="file" id="post-image-file" accept="image/*">
+                        <input type="hidden" id="post-image">
+                        <img id="post-image-preview" class="preview hidden" alt="">
+                    </label>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" data-close="true">İptal</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
