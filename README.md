@@ -1,6 +1,36 @@
 # Otantika Takı
 
-Statik vitrin sitesi + Flask API + admin panel. Ürün, kategori ve blog verileri `data/` altındaki JSON dosyalarında tutulur.
+El yapımı takı vitrin sitesi — statik ön yüz, Flask REST API ve admin paneli. Ürün, kategori ve blog verileri `data/` altındaki JSON dosyalarında tutulur.
+
+> Portfolyo / demo projesi — canlı yayında değil.
+
+## Ekran görüntüleri
+
+### Ana sayfa
+![Ana sayfa](docs/screenshots/homepage.png)
+
+### Mağaza
+![Mağaza](docs/screenshots/shop.png)
+
+### Hakkımızda
+![Hakkımızda](docs/screenshots/about.png)
+
+### İletişim
+![İletişim](docs/screenshots/contact.png)
+
+### Sepet
+![Sepet](docs/screenshots/cart.png)
+
+### Ödeme
+![Ödeme](docs/screenshots/checkout.png)
+
+## Özellikler
+
+- Kategori, fiyat ve renk filtreleri
+- Ürün detay, sepet ve favoriler
+- Blog ve iletişim sayfaları
+- Admin paneli ile ürün, kategori ve blog yönetimi (CRUD)
+- Görsel yükleme ve JSON tabanlı veri saklama
 
 ## Gereksinimler
 
@@ -43,6 +73,7 @@ python server\app.py
 admin/          Admin panel arayüzü
 css/, js/       Ön yüz dosyaları
 data/           JSON veri dosyaları
+docs/           Ekran görüntüleri
 img/            Ürün, blog ve kategori görselleri
 sass/           SCSS kaynakları (derlenmiş çıktı: css/style.css)
 server/         Flask API (app.py)
@@ -51,5 +82,3 @@ server/         Flask API (app.py)
 ## Git notları
 
 Depoya dahil edilmeyenler: `build/`, `dist/`, `*.exe`, `Source/`, `data/admin.json`, sanal ortam ve log dosyaları.
-
-İlk commit öncesi `data/admin.json` dosyasının `.gitignore` kapsamında kaldığından emin olun.
